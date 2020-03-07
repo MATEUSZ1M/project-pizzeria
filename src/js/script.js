@@ -69,9 +69,9 @@
       const thisProduct = this;
 
       // [DONE]generate HTML based on template
-      const generateHTML = templates.menuProduct(thisProduct.data);
-      // create element using utils.createElementFromHTML
-      
+      const generatedHTML = templates.menuProduct(thisProduct.data);
+      // [DONE]create element using utils.createElementFromHTML
+      thisProduct.element = utils.createDOMFromHTML(generatedHTML);
       // find menu container
 
       //add element to menu
