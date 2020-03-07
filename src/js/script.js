@@ -53,11 +53,30 @@
   };
   /* [DONE] Add class Product to script.js*/
   class Product {
-    constructor(id, data) { //[IN PROGRESS] Add Declare arguments id && data
+    //[DONE] Add Declare arguments id && data
+    constructor(id, data) {
       const thisProduct = this;
-      thisProduct.id = id; //[IN PROGRESS] Add Declare arguments id && data
-      thisProduct.data = data; //[IN PROGRESS] Add Declare arguments id && data
+      //[DONE] Add Declare arguments id && data
+      thisProduct.id = id;
+      //[DONE] Add Declare arguments id && data
+      thisProduct.data = data;
+      // [IN PROGRESS] Add metod rendering products in menu
+      thisProduct.renderInMenu();
       console.log('new Product: ', thisProduct);
+    }
+    // [IN PROGRESS] Add metod rendering products in menu
+    renderInMenu() {
+      const thisProduct = this;
+
+      // [DONE]generate HTML based on template
+      const generateHTML = templates.menuProduct(thisProduct.data);
+      // create element using utils.createElementFromHTML
+      
+      // find menu container
+
+      //add element to menu
+
+
     }
   }
   // [DONE] Add declaration of metod app.initMenu
