@@ -51,7 +51,7 @@
   const templates = {
     menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
   };
-  /* [IN PROGRES] Add class Product to script.js*/
+  /* [DONE] Add class Product to script.js*/
   class Product{
     constructor(){
       const thisProduct = this;
@@ -59,7 +59,14 @@
       console.log('new Product: ', thisProduct);
     }
   }
+  // [DONE] Add declaration of metod app.initMenu
+
   const app = {
+    initMenu: function(){
+      const testProduct = new Product();
+      console.log('testProduct: ', testProduct);
+    },
+
     init: function(){
       const thisApp = this;
       console.log('*** App starting ***');
@@ -67,8 +74,11 @@
       console.log('classNames:', classNames);
       console.log('settings:', settings);
       console.log('templates:', templates);
+
+      thisApp.initMenu();
     },
   };
+
 
   app.init();
 }
