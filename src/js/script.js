@@ -74,8 +74,8 @@
       thisProduct.element = utils.createDOMFromHTML(generatedHTML);
       // [DONE] find menu container
       const menuContainer = document.querySelector(select.containerOf.menu);
-      //add element to menu
-
+      //[DONE] add element to menu
+      menuContainer.appendChild(thisProduct.element);
 
     }
   }
