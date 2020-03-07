@@ -52,21 +52,22 @@
     menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
   };
   /* [DONE] Add class Product to script.js*/
-  class Product{
-    constructor(){
+  class Product {
+    constructor(id, data) { //[IN PROGRESS] Add Declare arguments id && data
       const thisProduct = this;
-
+      thisProduct.id = id; //[IN PROGRESS] Add Declare arguments id && data
+      thisProduct.data = data; //[IN PROGRESS] Add Declare arguments id && data
       console.log('new Product: ', thisProduct);
     }
   }
   // [DONE] Add declaration of metod app.initMenu
 
   const app = {
-    initMenu: function(){
+    initMenu: function () {
       const thisApp = this;
       console.log('thisApp.data: ', thisApp.data);
-      //[IN PROGRESS] Add loop productData in thisApp.data.products
-      for ( let productData in thisApp.data.products){
+      //[DONE] Add loop productData in thisApp.data.products
+      for (let productData in thisApp.data.products) {
         new Product(productData, thisApp.data.products[productData]);
       }
 
@@ -75,12 +76,12 @@
 
     },
     // [DONE Add metod app.initData
-    initData: function(){
+    initData: function () {
       const thisApp = this;
       thisApp.data = dataSource;
     },
 
-    init: function(){
+    init: function () {
       const thisApp = this;
       console.log('*** App starting ***');
       console.log('thisApp:', thisApp);
