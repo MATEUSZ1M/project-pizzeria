@@ -65,12 +65,16 @@
     initMenu: function(){
       const thisApp = this;
       console.log('thisApp.data: ', thisApp.data);
+      //[IN PROGRESS] Add loop productData in thisApp.data.products
+      for ( let productData in thisApp.data.products){
+        new Product(productData, thisApp.data.products[productData]);
+      }
 
       const testProduct = new Product();
       console.log('testProduct: ', testProduct);
 
     },
-    // [IN PROGRESS] Add metod app.initData
+    // [DONE Add metod app.initData
     initData: function(){
       const thisApp = this;
       thisApp.data = dataSource;
@@ -83,7 +87,7 @@
       console.log('classNames:', classNames);
       console.log('settings:', settings);
       console.log('templates:', templates);
-      thisApp.initData();// [IN PROGRESS] Add metod app.initData
+      thisApp.initData();// [DONE] Add metod app.initData
       thisApp.initMenu();
     },
   };
