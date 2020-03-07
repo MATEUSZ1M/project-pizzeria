@@ -63,8 +63,17 @@
 
   const app = {
     initMenu: function(){
+      const thisApp = this;
+      console.log('thisApp.data: ', thisApp.data);
+
       const testProduct = new Product();
       console.log('testProduct: ', testProduct);
+
+    },
+    // [IN PROGRESS] Add metod app.initData
+    initData: function(){
+      const thisApp = this;
+      thisApp.data = dataSource;
     },
 
     init: function(){
@@ -74,10 +83,11 @@
       console.log('classNames:', classNames);
       console.log('settings:', settings);
       console.log('templates:', templates);
-
+      thisApp.initData();// [IN PROGRESS] Add metod app.initData
       thisApp.initMenu();
     },
   };
+
 
 
   app.init();
