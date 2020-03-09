@@ -62,6 +62,8 @@
       thisProduct.data = data;
       // [DONE] Add metod rendering products in menu
       thisProduct.renderInMenu();
+      //[DONE] Add metod getElements
+      thisProduct.getElements();
       console.log('new Product: ', thisProduct);
       thisProduct.initAccordion();
     }
@@ -81,7 +83,6 @@
     //[DONE]Add getElements method
     getElements() {
       const thisProduct = this;
-
       thisProduct.accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
       thisProduct.form = thisProduct.element.querySelector(select.menuProduct.form);
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
@@ -95,6 +96,7 @@
       const thisProduct = this;
       /* find the clickable trigger (the element that should react to clicking) */
       const accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
+
       /* START: click event listener to trigger */
       accordionTrigger.addEventListener('click', function () {
         /* prevent default action for event */
@@ -103,7 +105,7 @@
         /* toggle active class on element of thisProduct */
         thisProduct.element.classList.toggle('active');
         /* find all active products */
-        const allActiveProducts = document.querySelectorAll('article.product.active');
+        const allActiveProducts = document.querySelectorAll(select.all.menuProductsActive);
         console.log('all active products: ', allActiveProducts);
         /* START LOOP: for each active product */
         for (let activeProduct of allActiveProducts) {
