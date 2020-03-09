@@ -63,7 +63,6 @@
       // [DONE] Add metod rendering products in menu
       thisProduct.renderInMenu();
       console.log('new Product: ', thisProduct);
-
       thisProduct.initAccordion();
     }
 
@@ -79,22 +78,32 @@
       //[DONE] add element to menu
       menuContainer.appendChild(thisProduct.element);
     }
+    //[DONE]Add getElements method
+    getElements() {
+      const thisProduct = this;
 
-    //[IN PROGRESS PROBLEM TO SOLVE] Add initAccordion function
+      thisProduct.accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
+      thisProduct.form = thisProduct.element.querySelector(select.menuProduct.form);
+      thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
+      thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
+      thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+    }
+
+    //[DONE]  metod
     initAccordion() {
 
       const thisProduct = this;
       /* find the clickable trigger (the element that should react to clicking) */
-      const trigger = document.querySelector(select.menuProduct.clickable);
+      const accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
       /* START: click event listener to trigger */
-      trigger.addEventListener('click', function () {
+      accordionTrigger.addEventListener('click', function () {
         /* prevent default action for event */
         event.preventDefault();
         console.log('clicked');
         /* toggle active class on element of thisProduct */
         thisProduct.element.classList.toggle('active');
         /* find all active products */
-        const allActiveProducts = document.querySelector(select.all.menuProductsActive);
+        const allActiveProducts = document.querySelector('article.product.active');
         console.log('all active products: ', allActiveProducts);
         /* START LOOP: for each active product */
         for (let activeProduct of allActiveProducts) {
