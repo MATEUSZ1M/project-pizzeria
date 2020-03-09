@@ -60,14 +60,16 @@
       thisProduct.id = id;
       //[DONE] Add Declare arguments id && data
       thisProduct.data = data;
-      // [IN PROGRESS] Add metod rendering products in menu
+      // [DONE] Add metod rendering products in menu
       thisProduct.renderInMenu();
       console.log('new Product: ', thisProduct);
+
+      thisProduct.initAccordion();
     }
-    // [IN PROGRESS] Add metod rendering products in menu
+
+    // [DONE] Add metod rendering products in menu
     renderInMenu() {
       const thisProduct = this;
-
       // [DONE]generate HTML based on template
       const generatedHTML = templates.menuProduct(thisProduct.data);
       // [DONE] create element using utils.createElementFromHTML
@@ -76,9 +78,39 @@
       const menuContainer = document.querySelector(select.containerOf.menu);
       //[DONE] add element to menu
       menuContainer.appendChild(thisProduct.element);
+    }
 
+    //[IN PROGRESS PROBLEM TO SOLVE] Add initAccordion function
+    initAccordion() {
+
+      const thisProduct = this;
+      /* find the clickable trigger (the element that should react to clicking) */
+      const trigger = document.querySelector(select.menuProduct.clickable);
+      /* START: click event listener to trigger */
+      trigger.addEventListener('click', function () {
+        /* prevent default action for event */
+        event.preventDefault();
+        console.log('clicked');
+        /* toggle active class on element of thisProduct */
+        thisProduct.element.classList.toggle('active');
+        /* find all active products */
+        const allActiveProducts = document.querySelector(select.all.menuProductsActive);
+        console.log('all active products: ', allActiveProducts);
+        /* START LOOP: for each active product */
+        for (let activeProduct of allActiveProducts) {
+          /* START: if the active product isn't the element of thisProduct */
+          if (activeProduct !== thisProduct.element) {
+            /* remove class active for the active product */
+            activeProduct.classList.remove('active');
+            /* END: if the active product isn't the element of thisProduct */
+          }
+          /* END LOOP: for each active product */
+        }
+        /* END: click event listener to trigger */
+      });
     }
   }
+
   // [DONE] Add declaration of metod app.initMenu
 
   const app = {
