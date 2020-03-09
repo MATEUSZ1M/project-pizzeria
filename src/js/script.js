@@ -103,7 +103,7 @@
         /* toggle active class on element of thisProduct */
         thisProduct.element.classList.toggle('active');
         /* find all active products */
-        const allActiveProducts = document.querySelector('article.product.active');
+        const allActiveProducts = document.querySelectorAll('article.product.active');
         console.log('all active products: ', allActiveProducts);
         /* START LOOP: for each active product */
         for (let activeProduct of allActiveProducts) {
