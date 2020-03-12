@@ -66,6 +66,8 @@
       thisProduct.getElements();
       console.log('new Product: ', thisProduct);
       thisProduct.initAccordion();
+      thisProduct.initOrderForm();
+      thisProduct.processOrder();
     }
 
     // [DONE] Add metod rendering products in menu
@@ -80,6 +82,7 @@
       //[DONE] add element to menu
       menuContainer.appendChild(thisProduct.element);
     }
+
     //[DONE]Add getElements method
     getElements() {
       const thisProduct = this;
@@ -119,6 +122,32 @@
         }
         /* END: click event listener to trigger */
       });
+    }
+    //[IN PROGRESS] Add initOrderForm method
+    initOrderForm() {
+      const thisProduct = this;
+      console.log('initOrderForm :', thisProduct);
+
+      thisProduct.form.addEventListener('submit', function(event){
+        event.preventDefault();
+        thisProduct.processOrder();
+      });
+
+      for(let input of thisProduct.formInputs){
+        input.addEventListener('change', function(){
+          thisProduct.processOrder();
+        });
+      }
+
+      thisProduct.cartButton.addEventListener('click', function(event){
+        event.preventDefault();
+        thisProduct.processOrder();
+      });
+    }
+    //[IN PROGRESS] Add processOrder method
+    processOrder() {
+      const thisProduct = this;
+      console.log('processOrder: ', thisProduct);
     }
   }
 
