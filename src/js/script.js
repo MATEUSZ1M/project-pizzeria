@@ -123,7 +123,7 @@
         /* END: click event listener to trigger */
       });
     }
-    //[IN PROGRESS] Add initOrderForm method
+    //[DONE] Add initOrderForm method
     initOrderForm() {
       const thisProduct = this;
       console.log('initOrderForm :', thisProduct);
@@ -148,6 +148,8 @@
     processOrder() {
       const thisProduct = this;
       console.log('processOrder: ', thisProduct);
+      const formData = utils.serializeFormToObject(thisProduct.form);
+      console.log(formData);
     }
   }
 
