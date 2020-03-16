@@ -179,8 +179,8 @@
             price = price - option.price;
           }
           console.log('Price of product and options : ', price);
+          /*START ELSE IF: if option is selected add class*/
 
-          
 
         }
         /* END LOOP: for each optionId in param.options */
@@ -188,7 +188,7 @@
       /* END LOOP: for each paramId in thisProduct.data.params */
 
       /* set the contents of thisProduct.priceElem to be the value of variable price */
-      thisProduct.priceElem = price;
+      thisProduct.priceElem.innerHTML = price;
 
     }
   }
