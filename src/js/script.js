@@ -155,20 +155,27 @@
       /* set variable price to equal thisProduct.data.price */
       let price = thisProduct.data.price;
       console.log('Price: ', price);
+
+      const images = thisProduct.imageWrapper;
+      console.log('List of images : ', images);
+
+
       /* START LOOP: for each paramId in thisProduct.data.params */
+
       for (let paramId in thisProduct.data.params) {
         console.log('Param id :', paramId);
         /* save the element in thisProduct.data.params with key paramId as const param */
         const param = thisProduct.data.params[paramId];
         console.log('Parameters :', param);
         /* START LOOP: for each optionId in param.options */
+
         for (let optionId in param.options) {
           /* save the element in param.options with key optionId as const option */
           const option = param.options[optionId];
           console.log('option :', option);
           /* START IF: if option is selected and option is not default */
           const optionSelected = formData.hasOwnProperty(paramId) && formData[paramId].indexOf(optionId) > -1;
-          console.log(optionSelected);
+          console.log('optionSelected', optionSelected);
           if (optionSelected && !option.default) {
             price = price + option.price;
             /* END IF: if option is selected and option is not default */
@@ -178,12 +185,24 @@
             /* deduct price of option from price */
             price = price - option.price;
           }
-          console.log('Price of product and options : ', price);
-          /*START ELSE IF: if option is selected add class*/
 
+          const selectedImg = thisProduct.imageWrapper.querySelectorAll(`.${paramId}-${optionId}`);
+          if(optionSelected){
+            for (let img of selectedImg){
+              img.classList.add(classNames.menuProduct.imageVisible);
+            }
+          }else{
+            for (let img of selectedImg){
+              img.classList.remove(classNames.menuProduct.imageVisible);
+
+            }
+          }
 
         }
         /* END LOOP: for each optionId in param.options */
+
+
+
       }
       /* END LOOP: for each paramId in thisProduct.data.params */
 
