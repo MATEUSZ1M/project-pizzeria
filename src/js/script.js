@@ -215,12 +215,12 @@
             price = price - option.price;
           }
           const selectedImg = thisProduct.imageWrapper.querySelectorAll(`.${paramId}-${optionId}`);
-          if(optionSelected){
-            for (let img of selectedImg){
+          if (optionSelected) {
+            for (let img of selectedImg) {
               img.classList.add(classNames.menuProduct.imageVisible);
             }
-          }else{
-            for (let img of selectedImg){
+          } else {
+            for (let img of selectedImg) {
               img.classList.remove(classNames.menuProduct.imageVisible);
             }
           }
@@ -234,29 +234,29 @@
       thisProduct.priceElem.innerHTML = price;
     }
 
-    initAmountWidget(){
+    initAmountWidget() {
       const thisProduct = this;
       thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
 
-      thisProduct.amountWidgetElem.addEventListener('updated', function(){
+      thisProduct.amountWidgetElem.addEventListener('updated', function () {
         thisProduct.processOrder();
       });
     }
   }
 
-  class AmountWidget{
-    constructor(element){
+  class AmountWidget {
+    constructor(element) {
       const thisWidget = this;
 
       thisWidget.getElements(element);
       thisWidget.value = settings.amountWidget.defaultValue;
       thisWidget.setValue(thisWidget.input.value);
       thisWidget.initActions();
-      console.log('AmountWidget : ', thisWidget);
-      console.log('constructor arguments : ', element);
+      //console.log('AmountWidget : ', thisWidget);
+      //console.log('constructor arguments : ', element);
     }
 
-    getElements(element){
+    getElements(element) {
       const thisWidget = this;
 
       thisWidget.element = element;
@@ -273,7 +273,7 @@
       /* To do: Add validation*/
       if (newValue != thisWidget.value
         && newValue >= settings.amountWidget.defaultMin
-        && newValue <= settings.amountWidget.defaultMax){
+        && newValue <= settings.amountWidget.defaultMax) {
         thisWidget.value = newValue;
         thisWidget.announce();
       }
@@ -281,20 +281,20 @@
       thisWidget.input.value = thisWidget.value;
     }
 
-    initActions(){
+    initActions() {
       const thisWidget = this;
-      console.log(thisWidget);
+      //console.log(thisWidget);
       //Add event listener
-      thisWidget.input.addEventListener('change', function(){
+      thisWidget.input.addEventListener('change', function () {
         thisWidget.setValue(thisWidget.input.value);
       });
 
-      thisWidget.linkIncrease.addEventListener('click', function(event){
+      thisWidget.linkIncrease.addEventListener('click', function (event) {
         event.preventDefault;
         thisWidget.setValue(thisWidget.value + 1);
       });
 
-      thisWidget.linkDecrease.addEventListener('click', function(event){
+      thisWidget.linkDecrease.addEventListener('click', function (event) {
         event.preventDefault;
         thisWidget.setValue(thisWidget.value - 1);
       });
@@ -307,35 +307,68 @@
     }
   }
 
+  class Cart {
+    constructor(element) {
+      const thisCart = this;
 
-  // [DONE] Add declaration of metod app.initMenu
+      thisCart.products = [];
+
+      thisCart.getElements(element);
+
+      thisCart.initActions();
+
+      console.log('new Cart', thisCart);
+    }
+
+    getElements(element) {
+      const thisCart = this;
+
+      thisCart.dom = {};
+
+      thisCart.dom.wrapper = element;
+
+      thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(
+        select.cart.toggleTrigger
+      );
+    }
+
+    initActions() {
+      const thisCart = this;
+
+      thisCart.dom.toggleTrigger.addEventListener('click', function() {
+        thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
+      });
+    }
+  }
+
   const app = {
-    initMenu: function () {
+    initMenu: function() {
       const thisApp = this;
-      console.log('thisApp.data: ', thisApp.data);
-      //[DONE] Add loop productData in thisApp.data.products
+
       for (let productData in thisApp.data.products) {
         new Product(productData, thisApp.data.products[productData]);
       }
-      const testProduct = new Product();
-      console.log('testProduct: ', testProduct);
     },
-    // [DONE Add metod app.initData
-    initData: function () {
+
+    initData: function() {
       const thisApp = this;
+
       thisApp.data = dataSource;
     },
 
-    init: function () {
+    initCart: function() {
       const thisApp = this;
-      console.log('*** App starting ***');
-      console.log('thisApp:', thisApp);
-      console.log('classNames:', classNames);
-      console.log('settings:', settings);
-      console.log('templates:', templates);
-      thisApp.initData();// [DONE] Add metod app.initData
-      thisApp.initMenu();
+
+      const cartElem = document.querySelector(select.containerOf.cart);
+      thisApp.cart = new Cart(cartElem);
     },
+
+    init: function() {
+      const thisApp = this;
+      thisApp.initData();
+      thisApp.initMenu();
+      thisApp.initCart();
+    }
   };
 
   app.init();
