@@ -60,11 +60,6 @@ export const classNames = {
 };
 
 export const settings = {
-  db: {//9.7
-    url: '//localhost:3131',
-    product: 'product',
-    order: 'order',
-  },
   amountWidget: {
     defaultValue: 1,
     defaultMin: 1,
@@ -72,17 +67,15 @@ export const settings = {
   },
   cart: {
     defaultDeliveryFee: 20,
-  }
+  },
+  db: {
+    url: '//localhost:3131',
+    product: 'product',
+    order: 'order',
+  },
 };
 
 export const templates = {
   menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
-  // CODE ADDED START
   cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
-  // CODE ADDED END
 };
-
-export default settings;
-
-
-
