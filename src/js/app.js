@@ -28,11 +28,8 @@ const app = {
         const clickedElement = this;
         event.preventDefault();
 
-        // get page id from href attribute
         const id = clickedElement.getAttribute('href').replace('#', '');
-        // run activatePage witch id of curent page
         thisApp.activatePage(id);
-        // change URL hash
         window.location.hash = '#/' + id;
       });
     }
@@ -41,11 +38,10 @@ const app = {
   activatePage: function(pageId) {
     const thisApp = this;
 
-    // add class "active " to matching pages, remove from non-matching
     for (let page of thisApp.pages) {
       page.classList.toggle(classNames.pages.active, page.id == pageId);
     }
-    // add class "active " to matching links, remove from non-matching
+
     for (let link of thisApp.navLinks) {
       link.classList.toggle(
         classNames.nav.active,
@@ -67,13 +63,12 @@ const app = {
 
   initBooking: function() {
     const thisApp = this;
-    //[done] znajdź kontener widgetu do rezerwacji stron;
+
     thisApp.wrapper = document.querySelector(select.containerOf.booking);
     const bookingPage = thisApp.wrapper;
-    
-    console.log('wrapper', thisApp.wrapper);
-    //nowa instancja klasy booking
 
+    console.log('wrapper', thisApp.wrapper);
+    
     thisApp.initBooking = new Booking(bookingPage);
   },
 
@@ -89,9 +84,7 @@ const app = {
       })
       .then(function(parsedResponse) {
         console.log('parsedREsponse', parsedResponse);
-        /* save parsedResponse as thisApp.data.products*/
         thisApp.data.products = parsedResponse;
-        /*execute initMenu method */
         thisApp.initMenu();
       });
     console.log('thisApp.data', JSON.stringify(thisApp.data));

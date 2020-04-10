@@ -59,7 +59,6 @@ class Cart {
     thisCart.dom.form.addEventListener('submit', function() {
       event.preventDefault();
       thisCart.sendOrder();
-      console.log('klik klik ');
     });
   }
 
@@ -69,11 +68,11 @@ class Cart {
     const generatedDOM = utils.createDOMFromHTML(generatedHTML);
 
     thisCart.dom.productList.appendChild(generatedDOM);
-    thisCart.products.push(new CartProduct(menuProduct, generatedDOM)); //new code 9.4
+    thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
 
     thisCart.update();
   }
-  //new code 9.4
+
   update() {
     const thisCart = this;
 
@@ -87,10 +86,6 @@ class Cart {
     }
 
     thisCart.totalPrice = thisCart.subtotalPrice + thisCart.deliveryFee;
-
-    console.log('total number', thisCart.totalNumber);
-    console.log('subtotal price', thisCart.subtotalPrice);
-    console.log('thisCart.totalPrice', thisCart.totalPrice);
 
     for (let key of thisCart.renderTotalsKeys) {
       for (let elem of thisCart.dom[key]) {
@@ -108,7 +103,6 @@ class Cart {
     thisCart.update();
   }
 
-  //9.8
   sendOrder() {
     const thisCart = this;
     const url = settings.db.url + '/' + settings.db.order;

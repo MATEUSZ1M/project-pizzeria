@@ -15,9 +15,6 @@ class CartProduct {
     thisCartProduct.getElements(element);
     thisCartProduct.initAmountWidget();
     thisCartProduct.initActions();
-
-    console.log('new CartProduct', thisCartProduct);
-    console.log('productData', menuProduct);
   }
 
   getElements(element) {
@@ -38,7 +35,7 @@ class CartProduct {
       select.cartProduct.remove
     );
   }
-  //new Code 9.4
+
   initAmountWidget() {
     const thisCartProduct = this;
 
@@ -52,7 +49,7 @@ class CartProduct {
       thisCartProduct.dom.price.innerHTML = thisCartProduct.price;
     });
   }
-  //new Code 9.5
+
   remove() {
     const thisCartProduct = this;
 
@@ -64,17 +61,16 @@ class CartProduct {
     });
     thisCartProduct.dom.wrapper.dispatchEvent(event);
   }
-  //9.5
+
   initActions() {
     const thisCartProduct = this;
 
     thisCartProduct.dom.remove.addEventListener('click', function() {
       event.preventDefault();
       thisCartProduct.remove();
-      console.log('remove click');
     });
   }
-  //9.8
+
   getData() {
     const thisCartProduct = this;
 
