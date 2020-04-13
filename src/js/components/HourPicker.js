@@ -19,7 +19,7 @@ class HourPicker extends BaseWidget {
     thisWidget.initPlugin();
   }
 
-parseValue(value) {
+  parseValue(value) {
     return utils.numberToHour(value);
   }
 
@@ -33,12 +33,10 @@ parseValue(value) {
 
     thisWidget.dom.input.addEventListener('input', function () {
       thisWidget.value = thisWidget.dom.input.value;
-      console.log('sdasdasdssssssssssssssssssssssssssss')
     });
 
   }
 
-  
 
   isValid() {
     return true;

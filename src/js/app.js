@@ -67,8 +67,6 @@ const app = {
     thisApp.wrapper = document.querySelector(select.containerOf.booking);
     const bookingPage = thisApp.wrapper;
 
-    console.log('wrapper', thisApp.wrapper);
-    
     thisApp.initBooking = new Booking(bookingPage);
   },
 
@@ -87,7 +85,6 @@ const app = {
         thisApp.data.products = parsedResponse;
         thisApp.initMenu();
       });
-    console.log('thisApp.data', JSON.stringify(thisApp.data));
   },
 
   initCart: function() {
