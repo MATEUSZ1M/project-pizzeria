@@ -16,6 +16,7 @@ export const select = {
     menuProducts: '#product-list > .product',
     menuProductsActive: '#product-list > .product.active',
     formInputs: 'input, select',
+    tables: 'table.selected'
   },
   menuProduct: {
     clickable: '.product__header',
@@ -80,6 +81,7 @@ export const classNames = {
   booking: {
     loading: 'loading',
     tableBooked: 'booked',
+    tableSelected: 'selected'
   },
   nav: {
     active: 'active',

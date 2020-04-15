@@ -10,6 +10,7 @@ class Booking {
     thisBooking.render(bookingPage);
     thisBooking.initWidgets();
     thisBooking.getData();
+    thisBooking.initBooking();
   }
 
   getData() {
@@ -150,8 +151,7 @@ class Booking {
       }
 
       if (
-        !allAvailable 
-        &&
+        !allAvailable &&
         thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)
       ) {
         table.classList.add(classNames.booking.tableBooked);
@@ -190,6 +190,37 @@ class Booking {
     thisBooking.dom.tables = thisBooking.dom.wrapper.querySelectorAll(
       select.booking.tables
     );
+  }
+
+  initBooking() {
+    const thisBooking = this;
+    const tableList = thisBooking.dom.tables;
+
+    for (let table of tableList) {
+      table.addEventListener('click', function () {
+        
+        if (table.classList.contains('booked')) {
+          return;
+        }else {
+          table.classList.toggle('selected');
+        }
+      });
+    }
+
+    thisBooking.hour = thisBooking.hourPicker.dom.input;
+    thisBooking.date = thisBooking.datePicker.dom.input;
+ 
+    thisBooking.hour.addEventListener('change', function () {
+      for(let table of tableList){
+        table.classList.remove('selected');
+      }
+    });
+
+    thisBooking.date.addEventListener('change', function () {
+      for(let table of tableList) {
+        table.classList.remove('selected');
+      }
+    });
   }
 
   initWidgets() {

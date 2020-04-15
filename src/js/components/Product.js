@@ -32,6 +32,7 @@ class Product {
     thisProduct.accordionTrigger = thisProduct.element.querySelector(
       select.menuProduct.clickable
     );
+  
     thisProduct.form = thisProduct.element.querySelector(
       select.menuProduct.form
     );
@@ -47,7 +48,7 @@ class Product {
     thisProduct.imageWrapper = thisProduct.element.querySelector(
       select.menuProduct.imageWrapper
     );
-    thisProduct.amountWidgetElem = thisProduct.element.querySelector(
+    thisProduct.amountWidgetElem = thisProduct.element.querySelectorAll(
       select.menuProduct.amountWidget
     );
   }
@@ -64,6 +65,7 @@ class Product {
       const allActiveProducts = document.querySelectorAll(
         select.all.menuProductsActive
       );
+      console.log(allActiveProducts);
 
       for (let activeProduct of allActiveProducts) {
         if (activeProduct !== thisProduct.element) {
