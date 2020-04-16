@@ -168,6 +168,8 @@ class Booking {
 
     thisBooking.dom = {};
 
+    console.log(thisBooking.dom);
+
     thisBooking.dom.wrapper = bookingPage;
 
     thisBooking.dom.wrapper.innerHTML = generatedHTML;
@@ -196,28 +198,36 @@ class Booking {
     const thisBooking = this;
     const tableList = thisBooking.dom.tables;
 
+    /* find the clickable trigger (the element that should react to clicking) */
     for (let table of tableList) {
       table.addEventListener('click', function () {
-        
-        if (table.classList.contains('booked')) {
-          return;
-        }else {
-          table.classList.toggle('selected');
+        event.preventDefault();
+
+        table.classList.toggle('selected');
+
+        const allSelectedTables = document.querySelectorAll('.table.selected');
+
+        console.log(allSelectedTables);
+
+        for (let selectedTable of allSelectedTables) {
+          if (selectedTable !== table || table.classList.contains('booked')) {
+            return selectedTable.classList.remove('selected');
+          }
         }
       });
     }
 
     thisBooking.hour = thisBooking.hourPicker.dom.input;
     thisBooking.date = thisBooking.datePicker.dom.input;
- 
+
     thisBooking.hour.addEventListener('change', function () {
-      for(let table of tableList){
+      for (let table of tableList) {
         table.classList.remove('selected');
       }
     });
 
     thisBooking.date.addEventListener('change', function () {
-      for(let table of tableList) {
+      for (let table of tableList) {
         table.classList.remove('selected');
       }
     });

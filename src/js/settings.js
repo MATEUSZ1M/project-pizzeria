@@ -16,7 +16,7 @@ export const select = {
     menuProducts: '#product-list > .product',
     menuProductsActive: '#product-list > .product.active',
     formInputs: 'input, select',
-    tables: 'table.selected'
+    tables: 'object table, selected'
   },
   menuProduct: {
     clickable: '.product__header',

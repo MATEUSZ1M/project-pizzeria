@@ -24,6 +24,8 @@ class Product {
 
     thisProduct.element = utils.createDOMFromHTML(generatedHTML);
     menuContainer.appendChild(thisProduct.element);
+
+    console.log(thisProduct.element);
   }
 
   getElements() {
@@ -32,7 +34,6 @@ class Product {
     thisProduct.accordionTrigger = thisProduct.element.querySelector(
       select.menuProduct.clickable
     );
-  
     thisProduct.form = thisProduct.element.querySelector(
       select.menuProduct.form
     );
@@ -48,7 +49,7 @@ class Product {
     thisProduct.imageWrapper = thisProduct.element.querySelector(
       select.menuProduct.imageWrapper
     );
-    thisProduct.amountWidgetElem = thisProduct.element.querySelectorAll(
+    thisProduct.amountWidgetElem = thisProduct.element.querySelector(
       select.menuProduct.amountWidget
     );
   }
@@ -65,7 +66,6 @@ class Product {
       const allActiveProducts = document.querySelectorAll(
         select.all.menuProductsActive
       );
-      console.log(allActiveProducts);
 
       for (let activeProduct of allActiveProducts) {
         if (activeProduct !== thisProduct.element) {
