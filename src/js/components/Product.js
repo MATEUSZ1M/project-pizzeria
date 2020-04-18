@@ -24,8 +24,6 @@ class Product {
 
     thisProduct.element = utils.createDOMFromHTML(generatedHTML);
     menuContainer.appendChild(thisProduct.element);
-
-    console.log(thisProduct.element);
   }
 
   getElements() {

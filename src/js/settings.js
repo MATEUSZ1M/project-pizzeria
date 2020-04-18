@@ -16,7 +16,7 @@ export const select = {
     menuProducts: '#product-list > .product',
     menuProductsActive: '#product-list > .product.active',
     formInputs: 'input, select',
-    tables: 'object table, selected'
+    tableSelected: '.table.selected'
   },
   menuProduct: {
     clickable: '.product__header',
@@ -31,6 +31,8 @@ export const select = {
       input: 'input.amount',
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
+      hoursAmount:'input[name="hours"]',
+      peopleAmount:'input[name="people"]',
     },
     datePicker: {
       wrapper: '.date-picker',
@@ -64,6 +66,11 @@ export const select = {
     peopleAmount: '.people-amount',
     hoursAmount: '.hours-amount',
     tables: '.floor-plan .table',
+    starters: '[name="starter"]',
+    phone:'.order-confirmation [type="tel"]',
+    adress:'.order-confirmation [type="text"]',
+    form: '.order-confirmation',
+    formSubmit: '.order-confirmation [type="submit"]',
   },
   nav: {
     links: '.main-nav a',
@@ -108,7 +115,10 @@ export const settings = {
     defaultDeliveryFee: 20,
   },
   booking: {
-    tableIdAttribute: 'data-table',
+    booking: {
+      loading: 'loading',
+      tableBooked: 'booked',
+    },
   },
   db: {
     url: '//localhost:3131',
