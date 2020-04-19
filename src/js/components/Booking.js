@@ -118,9 +118,9 @@ class Booking {
       })
 
       .then(function ([bookings, eventsCurrent, eventsRepeat]) {
-        // console.log('bookings from API', bookings);
-        // console.log('eventsCurrent from API', eventsCurrent);
-        // console.log('eventsRepeat from API', eventsRepeat);
+        console.log('bookings from API', bookings);
+        console.log('eventsCurrent from API', eventsCurrent);
+        console.log('eventsRepeat from API', eventsRepeat);
         thisBooking.parseData(bookings, eventsCurrent, eventsRepeat);
       });
   }
@@ -305,7 +305,6 @@ class Booking {
 
     thisBooking.dom.formSubmit.addEventListener('click', function () {
       event.preventDefault();
-      console.log('click click');
 
       thisBooking.makeBooking();
       for (let table of tableList) {

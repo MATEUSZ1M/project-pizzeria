@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,12 @@
   <title>Pizzeria</title>
   <link rel="stylesheet" href="./vendor/range-slider.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext"
+    rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <header class="header">
@@ -21,6 +24,7 @@
           <h2 class="logo__subtitle">the best homemade Italian food</h2>
         </div>
         <div class="main-nav">
+          <a href="#main">Main</a>
           <a href="#order">Order</a>
           <a href="#booking">Booking</a>
         </div>
@@ -62,6 +66,88 @@
   </header>
 
   <div id="pages">
+
+    <section id="main">
+      <div class="container main">
+        <section class="navigation">
+
+          <div class="row">
+            <div class="col-1">
+              <div class="overlay">
+                <h1 class="h1">Order online</h1>
+              </div>
+              <a href="#order">
+                <img src="images/main-page/pizza-1.jpg" alt="images">
+              </a>
+            </div>
+            <div class="col-1">
+              <div class="overlay">
+                <h1 class="h1">Book a table</h1>
+              </div>
+              <a href="#booking">
+                <img src="images/main-page/pizza-2.jpg" alt="images">
+              </a>
+            </div>
+            <div>
+            </div>
+            <div class="opening">
+              <h1 class="h1">Opening hours:</h1>
+              <h2 class="h2">mon-sun, 12pm-11pm</h2>
+            </div>
+          </div>
+        </section>
+
+        <section class="main-carosel">
+          <div class="row">
+            <div class="img-square col-2">
+              <img src="images/main-page/pizza-3.jpg" alt="images">
+            </div>
+            <div class="description col-3">
+              <h2 class="h2">Amazing service</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non vehicula tellus. Suspendisse potenti.
+                Quisque ut elementum nulla, nec pharetra enim. </p>
+              <h3 class="h3">– Margaret Osborne</h3>
+            </div>
+          </div>
+          <div class="dots">
+            <span class="active"><i class="fas fa-circle"></i></span>
+            <span><i class="fas fa-circle"></i></span>
+            <span><i class="fas fa-circle"></i></span>
+          </div>
+        
+        </section>
+        <section class="main-gallery">
+          <div class="row">
+            <div class="col-2">
+              <div class="overlay">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+              </div>
+              <img src="images/main-page/pizza-4.jpg" alt="image">
+            </div>
+            <div class="col-2">
+              <img src="images/main-page/pizza-5.jpg" alt="image">
+            </div>
+            <div class="col-2">
+              <img src="images/main-page/pizza-6.jpg" alt="image">
+            </div>
+            <div class="col-2">
+              <img src="images/main-page/pizza-7.jpg" alt="image">
+            </div>
+            <div class="col-2">
+              <img src="images/main-page/pizza-8.jpg" alt="image">
+            </div>
+            <div class="col-2">
+              <img src="images/main-page/pizza-9.jpg" alt="image">
+            </div>
+          </div>
+
+        <p><a href="https://www.instagram.com/">View more on Instagram</a></p>
+
+        </section>
+
+      </div>
+    </section>
     <section id="order">
       <div id="product-list" class="product-list container"></div>
     </section>
@@ -248,4 +334,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="js/app.js" type="module"></script>
 </body>
+
 </html>

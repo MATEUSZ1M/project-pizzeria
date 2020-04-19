@@ -206,7 +206,7 @@
   "event": [
     {
       "id": 1,
-      "date": "2020-04-22",
+      "date": "2020-04-29",
       "hour": "12:30",
       "table": 1,
       "repeat": false,
@@ -216,9 +216,9 @@
     },
     {
       "id": 2,
-      "date": "2020-04-16",
+      "date": "2020-04-24",
       "hour": "16:00",
-      "table": 1,
+      "table": 2,
       "repeat": false,
       "duration": 2,
       "ppl": 3,
@@ -226,9 +226,9 @@
     },
     {
       "id": 2,
-      "date": "2020-04-16",
+      "date": "2020-04-20",
       "hour": "12:00",
-      "table": 1,
+      "table": 3,
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
