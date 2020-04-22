@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pizzeria</title>
+  <link rel="stylesheet" href="./vendor/owl.carousel.min.css">
+  <link rel="stylesheet" href="./vendor/owl.theme.default.css">
   <link rel="stylesheet" href="./vendor/range-slider.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext"
@@ -70,11 +72,11 @@
     <section id="main">
       <div class="container main">
         <section class="navigation">
-
           <div class="row">
             <div class="col-1">
               <div class="overlay">
                 <h1 class="h1">Order online</h1>
+                <p class="p hidden-text">Food delivery</p>
               </div>
               <a href="#order">
                 <img src="images/main-page/pizza-1.jpg" alt="images">
@@ -83,6 +85,7 @@
             <div class="col-1">
               <div class="overlay">
                 <h1 class="h1">Book a table</h1>
+                <p class="p hidden-text">Book a table online</p>
               </div>
               <a href="#booking">
                 <img src="images/main-page/pizza-2.jpg" alt="images">
@@ -98,53 +101,118 @@
         </section>
 
         <section class="main-carosel">
-          <div class="row">
-            <div class="img-square col-2">
-              <img src="images/main-page/pizza-3.jpg" alt="images">
-            </div>
-            <div class="description col-3">
-              <h2 class="h2">Amazing service</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non vehicula tellus. Suspendisse potenti.
-                Quisque ut elementum nulla, nec pharetra enim. </p>
-              <h3 class="h3">– Margaret Osborne</h3>
-            </div>
-          </div>
-          <div class="dots">
-            <span class="active"><i class="fas fa-circle"></i></span>
-            <span><i class="fas fa-circle"></i></span>
-            <span><i class="fas fa-circle"></i></span>
-          </div>
-        
-        </section>
-        <section class="main-gallery">
-          <div class="row">
-            <div class="col-2">
-              <div class="overlay">
-                <i class="fas fa-heart"></i>
-                <i class="fas fa-share-alt"></i>
+
+
+          <section class="main-carosel">
+
+            <div class="owl-carousel owl-theme">
+
+              <div class="row">
+                  <div class="img-square col-2">
+                    <img src="images/main-page/pizza-5.jpg" alt="images">
+                  </div>
+                  <div class="description col-3 ">
+                    <h2 class="h2">Good</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non vehicula tellus. Suspendisse
+                      potenti.
+                      Quisque ut elementum nulla, nec pharetra enim. </p>
+                    <h3 class="h3">– Margaret Osborne</h3>
+                  </div>
               </div>
-              <img src="images/main-page/pizza-4.jpg" alt="image">
+
+              <div class="row">
+                <div class="img-square col-2">
+                  <img src="images/main-page/pizza-4.jpg" alt="images">
+                </div>
+                <div class="description col-3 ">
+                  <h2 class="h2">Very Good</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non vehicula tellus. Suspendisse
+                    potenti.
+                    Quisque ut elementum nulla, nec pharetra enim. </p>
+                  <h3 class="h3">– Margaret Osborne</h3>
+                </div>
             </div>
-            <div class="col-2">
-              <img src="images/main-page/pizza-5.jpg" alt="image">
-            </div>
-            <div class="col-2">
-              <img src="images/main-page/pizza-6.jpg" alt="image">
-            </div>
-            <div class="col-2">
-              <img src="images/main-page/pizza-7.jpg" alt="image">
-            </div>
-            <div class="col-2">
-              <img src="images/main-page/pizza-8.jpg" alt="image">
-            </div>
-            <div class="col-2">
-              <img src="images/main-page/pizza-9.jpg" alt="image">
-            </div>
+
+            <div class="row">
+              <div class="img-square col-2">
+                <img src="images/main-page/pizza-3.jpg" alt="images">
+              </div>
+              <div class="description col-3 ">
+                <h2 class="h2">Avesome</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non vehicula tellus. Suspendisse
+                  potenti.
+                  Quisque ut elementum nulla, nec pharetra enim. </p>
+                <h3 class="h3">– Margaret Osborne</h3>
+              </div>
           </div>
 
-        <p><a href="https://www.instagram.com/">View more on Instagram</a></p>
 
-        </section>
+
+            </div>
+
+
+
+
+
+
+
+          </section>
+          <section class="main-gallery">
+            <div class="row">
+              <div class="col-2">
+                <div class="overlay">
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-share-alt"></i>
+                </div>
+                <dvi class="overlay">
+                  <span><a href="#"><i class="fas fa-heart"></i></a></span>
+                  <span><a href="#"><i class="fas fa-share-alt"></i></a></span>
+                </dvi>
+                <img src="images/main-page/pizza-4.jpg" alt="image">
+              </div>
+
+              <div class="col-2">
+                <dvi class="overlay">
+                  <span><a href="#"><i class="fas fa-heart"></i></a></span>
+                  <span><a href="#"><i class="fas fa-share-alt"></i></a></span>
+                </dvi>
+                <img src="images/main-page/pizza-5.jpg" alt="image">
+              </div>
+              <div class="col-2">
+
+                <img src="images/main-page/pizza-6.jpg" alt="image">
+
+                <dvi class="overlay">
+                  <span><a href="#"><i class="fas fa-heart"></i></a></span>
+                  <span><a href="#"><i class="fas fa-share-alt"></i></a></span>
+                </dvi>
+              </div>
+              <div class="col-2">
+                <dvi class="overlay">
+                  <span><a href="#"><i class="fas fa-heart"></i></a></span>
+                  <span><a href="#"><i class="fas fa-share-alt"></i></a></span>
+                </dvi>
+                <img src="images/main-page/pizza-7.jpg" alt="image">
+              </div>
+              <div class="col-2">
+                <dvi class="overlay">
+                  <span><a href="#"><i class="fas fa-heart"></i></a></span>
+                  <span><a href="#"><i class="fas fa-share-alt"></i></a></span>
+                </dvi>
+                <img src="images/main-page/pizza-8.jpg" alt="image">
+              </div>
+              <div class="col-2">
+                <dvi class="overlay">
+                  <span><a href="#"><i class="fas fa-heart"></i></a></span>
+                  <span><a href="#"><i class="fas fa-share-alt"></i></a></span>
+                </dvi>
+                <img src="images/main-page/pizza-9.jpg" alt="image">
+              </div>
+            </div>
+
+            <p><a href="https://www.instagram.com/">View more on Instagram</a></p>
+
+          </section>
 
       </div>
     </section>
@@ -329,6 +397,9 @@
     </article> <!-- .product -->
   </script>
 
+  <script src="./vendor/jquery.min.js"></script>
+  <script src="./js/components/carousel.js"></script>
+  <script src="./vendor/owl.carousel.min.js"></script>
   <script src="./vendor/range-slider.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>

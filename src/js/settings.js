@@ -16,7 +16,7 @@ export const select = {
     menuProducts: '#product-list > .product',
     menuProductsActive: '#product-list > .product.active',
     formInputs: 'input, select',
-    tableSelected: '.table.selected'
+    tableSelected: '.table.selected',
   },
   menuProduct: {
     clickable: '.product__header',
@@ -75,6 +75,10 @@ export const select = {
   nav: {
     links: '.main-nav a',
   },
+  carousel: {
+    slider: '.opinion-wrapper',
+    dot: '.fas.fa-circle',
+  },
 };
 
 export const classNames = {
@@ -96,6 +100,17 @@ export const classNames = {
   pages: {
     active: 'active',
   },
+
+  slider: {
+    active: 'active',
+  },
+
+  dot: {
+    active: 'active',
+  },
+
+
+
 };
 
 export const settings = {

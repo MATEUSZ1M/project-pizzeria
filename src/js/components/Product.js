@@ -35,6 +35,7 @@ class Product {
     thisProduct.form = thisProduct.element.querySelector(
       select.menuProduct.form
     );
+    
     thisProduct.formInputs = thisProduct.form.querySelectorAll(
       select.all.formInputs
     );

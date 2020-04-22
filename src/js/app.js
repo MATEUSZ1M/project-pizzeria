@@ -4,7 +4,7 @@ import Cart from './components/Cart.js';
 import Booking from './components/Booking.js';
 
 const app = {
-  initPages: function() {
+  initPages: function () {
     const thisApp = this;
 
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
@@ -24,7 +24,7 @@ const app = {
     thisApp.activatePage(pageMatchingHash);
 
     for (let link of thisApp.navLinks) {
-      link.addEventListener('click', function(event) {
+      link.addEventListener('click', function (event) {
         const clickedElement = this;
         event.preventDefault();
 
@@ -33,9 +33,11 @@ const app = {
         window.location.hash = '#/' + id;
       });
     }
+
+    
   },
 
-  activatePage: function(pageId) {
+  activatePage: function (pageId) {
     const thisApp = this;
 
     for (let page of thisApp.pages) {
@@ -50,7 +52,7 @@ const app = {
     }
   },
 
-  initMenu: function() {
+  initMenu: function () {
     const thisApp = this;
 
     for (let productData in thisApp.data.products) {
@@ -61,7 +63,7 @@ const app = {
     }
   },
 
-  initBooking: function() {
+  initBooking: function () {
     const thisApp = this;
 
     thisApp.wrapper = document.querySelector(select.containerOf.booking);
@@ -70,23 +72,23 @@ const app = {
     thisApp.initBooking = new Booking(bookingPage);
   },
 
-  initData: function() {
+  initData: function () {
     const thisApp = this;
     thisApp.data = {};
 
     const url = settings.db.url + '/' + settings.db.product;
 
     fetch(url)
-      .then(function(rawResponse) {
+      .then(function (rawResponse) {
         return rawResponse.json();
       })
-      .then(function(parsedResponse) {
+      .then(function (parsedResponse) {
         thisApp.data.products = parsedResponse;
         thisApp.initMenu();
       });
   },
 
-  initCart: function() {
+  initCart: function () {
     const thisApp = this;
 
     const cartElem = document.querySelector(select.containerOf.cart);
@@ -94,12 +96,13 @@ const app = {
 
     thisApp.productList = document.querySelector(select.containerOf.menu);
 
-    thisApp.productList.addEventListener('add-to-cart', function(event) {
+    thisApp.productList.addEventListener('add-to-cart', function (event) {
       app.cart.add(event.detail.product);
     });
   },
 
-  init: function() {
+
+  init: function () {
     const thisApp = this;
     thisApp.initData();
     thisApp.initCart();
